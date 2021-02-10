@@ -7,6 +7,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\SearchesController;
 use App\Http\Controllers\TagsController;
+use Illuminate\Support\Facades\Artisan;
 
 //Pages
 Route::get('/', [PagesController::class, 'index'])->name('index');

@@ -8,18 +8,18 @@
 	<meta property="og:locale" content="fa_IR" />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="Mahanfr — {{$post->title}}" />
-	<meta property="og:description" content="" />
+	<meta property="og:description" content="{{ \Illuminate\Support\Str::limit($post->body, 150, $end='...') }}" />
 	<meta property="og:url" content="http://Mahanfr.ir/blog/{{$post->slug}}" />
 	<meta property="og:site_name" content="MahanFr" />
-	<meta property="article:publisher" content="MahanFr" />
+	<meta property="article:publisher" content="Mahan Farzaneh" />
 	<meta property="article:author" content="ماهان فرزانه" />
 	<meta property="article:published_time" content="{{$post->posted_at}}" />
 	<meta property="article:modified_time" content="{{$post->posted_at}}" />
-	<meta property="og:image" content="" />
+	<meta property="og:image" content="{{$post->post_image}}" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="628" />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:image" content="" />
+	<meta name="twitter:image" content="{{$post->post_image}}" />
 	<meta name="twitter:creator" content="@mahan_farzaneh" />
 	<meta name="twitter:site" content="@mahan_farzaneh" />
 	<meta name="twitter:label1" content="Written by">
@@ -41,8 +41,10 @@
       <p class="text-center"><strong> نوشته شده در {{$post->posted_at}}</strong></p>
       <img class="my-3" src="{{$post->post_image}}" alt="{{$post->slug}}" width="100%" height="56%">
       <br><br><hr>
-      <h2>{{$post->title}}</h2>
-      <p>{!!$post->body!!}</p>
+      <article>
+        <h2>{{$post->title}}</h2>
+        <p>{!!$post->body!!}</p>
+      </article>
       <div class="my-4 text-center">
         @foreach ($post->tags as $tag)
           <a href="{{ url('/tags') }}/{{$tag->name}}"><span class="badge rounded-pill bg-dark">{{$tag->name}}</span></a>

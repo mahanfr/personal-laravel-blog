@@ -11,13 +11,22 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N96Z289CZZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-N96Z289CZZ');
+    </script>
     <!-- Styles -->
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.rtl.min.css" > --}}
     <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.rtl.min.css')}}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="shorcut icon" type="image/x-icon" sizes="32x32" href="{{ URL::asset('favicon.ico') }}">
-    <link rel="shortcut icon" type="image/x-icon" sizes="16x16" href="{{ URL::asset('favicon.ico') }}">
+    <link rel="shorcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <link rel="shorcut icon" type="image/x-icon" sizes="32x32" href="{{ asset('favicon.ico') }}">
+    <link rel="shortcut icon" type="image/x-icon" sizes="16x16" href="{{ asset('favicon.ico') }}">
     @yield('css')
 </head>
 <body>
@@ -81,7 +90,7 @@
       <!-- Copyright -->
       <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
         © 2021 Copyright:
-        <a class="text-muted" href="http://mahanfr.ir/">MahanFr.ir</a>
+        <a class="text-muted" href="https://mahanfr.ir/">MahanFr.ir</a>
       </div>
       <!-- Copyright -->
     </footer>
