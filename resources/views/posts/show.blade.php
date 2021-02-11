@@ -39,11 +39,11 @@
         </div>
       @endif
       <p class="text-center"><strong> نوشته شده در {{$post->posted_at}}</strong></p>
-      <img class="my-3" src="{{$post->post_image}}" alt="{{$post->slug}}" width="100%" height="56%">
+      <img class="my-3" src="{{$post->post_image}}" alt="{{$post->title}}" width="100%" height="56%">
       <br><br><hr>
       <article>
         <h2>{{$post->title}}</h2>
-        <p>{!!$post->body!!}</p>
+        {!!$post->body!!}
       </article>
       <div class="my-4 text-center">
         @foreach ($post->tags as $tag)

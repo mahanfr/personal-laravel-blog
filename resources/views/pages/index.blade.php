@@ -67,7 +67,7 @@
           @foreach ($posts as $post)
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="{{ $post->post_image }}" alt={{ $post->slug }}">
+                <img class="card-img-top" src="{{ $post->post_image }}" alt={{ $post->title }}">
                 <div class="card-body">
                   <h5 class="card-text"><a href="{{ url('/blog') }}/{{ $post->slug }}">{{ $post->title }}</a></h5>
                   <p class="card-text">{{ \Illuminate\Support\Str::limit($post->body, 150, $end='...') }}</p>

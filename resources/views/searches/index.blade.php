@@ -15,7 +15,7 @@
                 @foreach ($posts as $post)
                   <div class="col-md-4">
                     <div class="card mb-4 box-shadow">
-                      <img class="card-img-top" src="{{ $post->post_image }}" alt={{ $post->slug }}">
+                      <img class="card-img-top" src="{{ $post->post_image }}" alt={{ $post->title }}">
                       <div class="card-body">
                         <p class="card-text"><a href="{{ url('/blog') }}/{{ $post->slug }}">{{ $post->title }}</a></p>
                         <p class="card-text">{{ strlen( $post->body ) > 200 ? substr( $post->body, 0, 30) . ' ...' : $post->body }}</p>
